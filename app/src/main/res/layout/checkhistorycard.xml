@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="4dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_checkdate"
+            android:layout_marginTop="70dp"
+            android:background="@color/underline" />
+
+        <TextView
+            android:id="@+id/checkIdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check ID:" />
+
+        <TextView
+            android:id="@+id/tv_checkid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="3dp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/checkIdLabel"
+            android:text=" 0001" />
+
+        <TextView
+            android:id="@+id/text_view_21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_20"
+            android:layout_marginTop="7dp"
+            android:text="Signed off by:" />
+
+        <TextView
+            android:id="@+id/tv_checkstaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_location"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/text_view_21"
+            android:text="Amy Jones"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_checkdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="26dp"
+            android:text="02/06/23"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/text_view_22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="3dp"
+            android:layout_toStartOf="@+id/tv_checkdate"
+            android:text="Date: " />
+
+        <TextView
+            android:id="@+id/text_view_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkIdLabel"
+            android:layout_marginTop="7dp"
+            android:text="Location: " />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="26dp"
+            android:layout_toEndOf="@+id/text_view_20"
+            android:text="Location 1"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/person_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tv_checkdate"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/lefticon" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

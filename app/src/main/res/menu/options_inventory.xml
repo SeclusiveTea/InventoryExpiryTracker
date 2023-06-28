@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item android:id="@+id/a"
+        android:title=""
+        app:showAsAction="always"
+        android:icon="@drawable/baseline_more_vert_24">
+
+        <menu>
+            <item
+                android:id="@+id/addItemFragment"
+                android:title="Add Item"
+                android:icon="@drawable/baseline_add_24" />
+
+            <item
+                android:id="@+id/checkHistoryFragment"
+                android:title="Check History"
+                android:icon="@drawable/baseline_history_24"
+                app:showAsAction="never"/>
+        </menu>
+
+    </item>
+</menu>

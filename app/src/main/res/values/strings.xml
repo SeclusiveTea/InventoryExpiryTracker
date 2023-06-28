@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DrugCheckApp</string>
+    
+    <string-array name="spinnerdrugname">
+        <item>Oxycodone</item>
+        <item>Oxynorm</item>
+        <item>Tramadol</item>
+        <item>Codeine</item>
+        <item>Panadol</item>
+        <item>Ibuprofen</item>
+        <item>Gabapentin</item>
+        <item>Celebrex</item>
+    </string-array>
+    
+</resources>

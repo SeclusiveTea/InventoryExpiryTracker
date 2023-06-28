@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/disclaimerFragment">
+
+    <fragment
+        android:id="@+id/disclaimerFragment"
+        android:name="com.example.inventoryexpirytracker.DisclaimerFragment"
+        android:label="Disclaimer"
+        tools:layout="@layout/fragment_disclaimer">
+        <action
+            android:id="@+id/action_disclaimerFragment_to_loginFragment"
+            app:popUpTo="@id/disclaimerFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.inventoryexpirytracker.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDrugFragment"
+        android:name="com.example.inventoryexpirytracker.AddItemFragment"
+        tools:layout="@layout/fragment_add_item">
+        <argument
+            android:name="location"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.inventoryexpirytracker.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
+        <argument
+            android:name="firstname"
+            app:argType="string" />
+        <argument
+            android:name="lastname"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="com.example.inventoryexpirytracker.inventory.InventoryFragment"
+        tools:layout="@layout/fragment_inventory">
+        <argument
+            android:name="label"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_inventoryFragment_to_addDrugFragment"
+            app:destination="@id/addDrugFragment" />
+        <action
+            android:id="@+id/action_inventoryFragment_to_drugDetailFragment"
+            app:destination="@id/drugDetailFragment" />
+        <action
+            android:id="@+id/action_inventoryFragment_to_addCheckFragment"
+            app:destination="@id/addCheckFragment" />
+        <action
+            android:id="@+id/action_inventoryFragment_to_checkHistoryFragment"
+            app:destination="@id/checkHistoryFragment" />
+        <argument android:name="firstname"
+            app:argType="string" />
+        <argument
+            android:name="lastname"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/drugDetailFragment"
+        android:name="com.example.inventoryexpirytracker.ItemDetailFragment"
+        android:label="Drug Details"
+        tools:layout="@layout/fragment_item_detail">
+        <argument
+            android:name="drug"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/manageNursesFragment"
+        android:name="com.example.inventoryexpirytracker.managestaff.ManageStaffFragment"
+        android:label="Manage Nurses"
+        tools:layout="@layout/manage_staff_fragment" >
+        <action
+            android:id="@+id/action_manageNursesFragment_to_addNurseFragment"
+            app:destination="@id/addNurseFragment" />
+        <action
+            android:id="@+id/action_manageNursesFragment_to_nurseDetailFragment"
+            app:destination="@id/nurseDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.inventoryexpirytracker.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/checkHistoryFragment"
+        android:name="com.example.inventoryexpirytracker.checkhistory.CheckHistoryFragment"
+        tools:layout="@layout/fragment_check_history">
+        <argument
+            android:name="location"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_checkHistoryFragment_to_checkHistoryDetailsFragment"
+            app:destination="@id/checkHistoryDetailsFragment" />
+        <argument
+            android:name="firstname"
+            app:argType="string" />
+        <argument
+            android:name="lastname"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNurseFragment"
+        android:name="com.example.inventoryexpirytracker.AddStaffFragment"
+        android:label="Add a Nurse"
+        tools:layout="@layout/fragment_add_staff" />
+    <fragment
+        android:id="@+id/nurseDetailFragment"
+        android:name="com.example.inventoryexpirytracker.staffdetails.StaffDetailFragment"
+        android:label="Nurse Details"
+        tools:layout="@layout/fragment_staff_detail">
+        <argument
+            android:name="nursefname"
+            app:argType="string" />
+        <argument
+            android:name="nurselname"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nurseDetailFragment_to_checkHistoryDetailsFragment"
+            app:destination="@id/checkHistoryDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCheckFragment"
+        android:name="com.example.inventoryexpirytracker.addcheck.AddCheckFragment"
+        tools:layout="@layout/fragment_add_check">
+        <argument
+            android:name="location"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_addCheckFragment_to_updateDrugFragment"
+            app:destination="@id/updateDrugFragment" />
+        <action
+            android:id="@+id/action_addCheckFragment_to_confirmCheckFragment"
+            app:destination="@id/confirmCheckFragment" />
+        <action
+            android:id="@+id/action_addCheckFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="firstname"
+            app:argType="string" />
+        <argument
+            android:name="lastname"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateDrugFragment"
+        android:name="com.example.inventoryexpirytracker.addcheck.UpdateDrugFragment"
+        android:label="Update Drug Status"
+        tools:layout="@layout/fragment_update_item">
+        <argument
+            android:name="drug"
+            app:argType="string" />
+        <argument
+            android:name="location"
+            app:argType="string" />
+        <argument
+            android:name="newCheckID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_updateDrugFragment_to_addCheckFragment"
+            app:popUpTo="@id/addCheckFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/addCheckFragment" />
+        <argument
+            android:name="firstname"
+            app:argType="string" />
+        <argument
+            android:name="lastname"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkHistoryDetailsFragment"
+        android:name="com.example.inventoryexpirytracker.checkhistorydetails.CheckHistoryDetailsFragment"
+        android:label="Check Details"
+        tools:layout="@layout/fragment_check_history_details">
+        <argument
+            android:name="checkID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmCheckFragment"
+        android:name="com.example.inventoryexpirytracker.addcheck.ConfirmCheckFragment"
+        android:label="Confirmation">
+        <argument
+            android:name="location"
+            app:argType="string" />
+        <argument
+            android:name="checkid"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_confirmCheckFragment_to_checkHistoryFragment"
+            app:destination="@id/checkHistoryFragment"
+            app:popUpTo="@id/addCheckFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="firstname"
+            app:argType="string" />
+        <argument
+            android:name="lastname"
+            app:argType="string" />
+    </fragment>
+</navigation>
